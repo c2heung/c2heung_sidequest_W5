@@ -1,0 +1,77 @@
+#camera .fog-house {
+  pointer-events: none;
+  /* The transform will be set by JS to match the fog layer movement */
+  z-index: 2;
+  filter: none;
+}
+#camera .fog-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#camera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #23272b 0%, #bfc3c9 100%);
+  z-index: 1;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+}
+
+.fog-layer {
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+  animation: scroll 60s linear infinite;
+}
+
+.fog-layer:nth-child(1) {
+  opacity: 0.3;
+  animation-duration: 80s;
+}
+
+.fog-layer:nth-child(2) {
+  opacity: 0.5;
+  animation-duration: 60s;
+}
+
+.fog-layer:nth-child(3) {
+  opacity: 0.7;
+  animation-duration: 40s;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

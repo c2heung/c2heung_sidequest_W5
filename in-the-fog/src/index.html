@@ -1,0 +1,332 @@
+<!-- Person shadow, bottom left, 1/4 screen, 3rd person perspective -->
+<!-- Person shadow, above fog layers, dark silhouette -->
+<svg
+  class="person-shadow"
+  width="25vw"
+  height="50vh"
+  viewBox="0 60 100 100"
+  style="
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    opacity: 0.85;
+    pointer-events: none;
+  "
+>
+  <!-- Head -->
+  <ellipse cx="50" cy="78" rx="18" ry="18" fill="#181a1c" />
+  <!-- Body (extends out bottom, no arms, slightly wider) -->
+  <rect x="34" y="96" width="32" height="100" rx="14" fill="#181a1c" />
+</svg>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In the Fog</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="fog-container">
+      <div class="fog-layer layer1"></div>
+      <div class="fog-layer layer2"></div>
+      <div class="fog-layer layer3"></div>
+    </div>
+    <script src="scripts/fog.js"></script>
+    <script src="scripts/fog.js"></script>
+    <body>
+      <div id="camera">
+        <div class="fog-layer">
+          <!-- Car driving through the fog (same layer as house and trees) -->
+          <!-- Car 1: right to left (existing) -->
+          <svg
+            id="fog-car"
+            width="180"
+            height="72"
+            viewBox="0 0 120 48"
+            style="
+              position: absolute;
+              left: 100vw;
+              bottom: 50px;
+              z-index: 5;
+              opacity: 0.92;
+              pointer-events: none;
+            "
+          >
+            <!-- Car body -->
+            <rect x="10" y="18" width="80" height="20" rx="6" fill="#3a3a3a" />
+            <!-- Car roof -->
+            <rect x="30" y="8" width="40" height="16" rx="6" fill="#555" />
+            <!-- Windows -->
+            <rect
+              x="36"
+              y="12"
+              width="12"
+              height="10"
+              rx="2"
+              fill="#bfe6ff"
+              fill-opacity="0.7"
+            />
+            <rect
+              x="54"
+              y="12"
+              width="12"
+              height="10"
+              rx="2"
+              fill="#bfe6ff"
+              fill-opacity="0.7"
+            />
+            <!-- Wheels -->
+            <ellipse cx="26" cy="40" rx="8" ry="6" fill="#23272b" />
+            <ellipse cx="74" cy="40" rx="8" ry="6" fill="#23272b" />
+            <!-- Headlight -->
+            <ellipse
+              cx="14"
+              cy="28"
+              rx="4"
+              ry="2"
+              fill="#fffbe6"
+              fill-opacity="0.8"
+            />
+          </svg>
+          <!-- Car 2: left to right -->
+          <svg
+            id="fog-car2"
+            width="180"
+            height="72"
+            viewBox="0 0 120 48"
+            style="
+              position: absolute;
+              left: -180px;
+              bottom: 50px;
+              z-index: 5;
+              opacity: 0.92;
+              pointer-events: none;
+            "
+          >
+            <!-- Car body -->
+            <rect x="10" y="18" width="80" height="20" rx="6" fill="#2a4a7b" />
+            <!-- Car roof -->
+            <rect x="30" y="8" width="40" height="16" rx="6" fill="#3a5a8b" />
+            <!-- Windows -->
+            <rect
+              x="36"
+              y="12"
+              width="12"
+              height="10"
+              rx="2"
+              fill="#bfe6ff"
+              fill-opacity="0.7"
+            />
+            <rect
+              x="54"
+              y="12"
+              width="12"
+              height="10"
+              rx="2"
+              fill="#bfe6ff"
+              fill-opacity="0.7"
+            />
+            <!-- Wheels -->
+            <ellipse cx="26" cy="40" rx="8" ry="6" fill="#23272b" />
+            <ellipse cx="74" cy="40" rx="8" ry="6" fill="#23272b" />
+            <!-- Headlight (right side) -->
+            <ellipse
+              cx="106"
+              cy="28"
+              rx="4"
+              ry="2"
+              fill="#fffbe6"
+              fill-opacity="0.8"
+            />
+          </svg>
+          <!-- Car 3: right to left, different color -->
+          <svg
+            id="fog-car3"
+            width="180"
+            height="72"
+            viewBox="0 0 120 48"
+            style="
+              position: absolute;
+              left: 100vw;
+              bottom: 50px;
+              z-index: 5;
+              opacity: 0.92;
+              pointer-events: none;
+            "
+          >
+            <!-- Car body -->
+            <rect x="10" y="18" width="80" height="20" rx="6" fill="#7b2a2a" />
+            <!-- Car roof -->
+            <rect x="30" y="8" width="40" height="16" rx="6" fill="#a33a3a" />
+            <!-- Windows -->
+            <rect
+              x="36"
+              y="12"
+              width="12"
+              height="10"
+              rx="2"
+              fill="#bfe6ff"
+              fill-opacity="0.7"
+            />
+            <rect
+              x="54"
+              y="12"
+              width="12"
+              height="10"
+              rx="2"
+              fill="#bfe6ff"
+              fill-opacity="0.7"
+            />
+            <!-- Wheels -->
+            <ellipse cx="26" cy="40" rx="8" ry="6" fill="#23272b" />
+            <ellipse cx="74" cy="40" rx="8" ry="6" fill="#23272b" />
+            <!-- Headlight -->
+            <ellipse
+              cx="14"
+              cy="28"
+              rx="4"
+              ry="2"
+              fill="#fffbe6"
+              fill-opacity="0.8"
+            />
+          </svg>
+          <svg
+            class="fog-house"
+            width="320"
+            height="240"
+            viewBox="0 0 160 120"
+            style="
+              position: absolute;
+              left: 50%;
+              bottom: 50px;
+              transform: translateX(-50%);
+              opacity: 1;
+              z-index: 2;
+            "
+          >
+            <!-- House walls -->
+            <rect
+              x="40"
+              y="60"
+              width="80"
+              height="50"
+              rx="6"
+              fill="#a23c2b"
+              fill-opacity="1"
+            />
+            <!-- Roof -->
+            <polygon
+              points="30,60 80,25 130,60"
+              fill="#7b241c"
+              fill-opacity="1"
+            />
+            <!-- Windows -->
+            <rect
+              x="55"
+              y="80"
+              width="15"
+              height="15"
+              rx="2"
+              fill="#ffe9b0"
+              fill-opacity="1"
+            />
+            <rect
+              x="90"
+              y="80"
+              width="15"
+              height="15"
+              rx="2"
+              fill="#ffe9b0"
+              fill-opacity="1"
+            />
+          </svg>
+          <!-- Trees: 5 SVGs, randomly spread out horizontally, all at bottom:50px -->
+          <svg
+            class="fog-tree"
+            width="60"
+            height="120"
+            viewBox="0 0 30 60"
+            style="
+              position: absolute;
+              left: 12vw;
+              bottom: 50px;
+              z-index: 2;
+              opacity: 0.85;
+            "
+          >
+            <rect x="13" y="40" width="4" height="18" fill="#5b4636" />
+            <ellipse cx="15" cy="38" rx="12" ry="18" fill="#3d5c3a" />
+          </svg>
+          <svg
+            class="fog-tree"
+            width="50"
+            height="100"
+            viewBox="0 0 25 50"
+            style="
+              position: absolute;
+              left: 28vw;
+              bottom: 50px;
+              z-index: 2;
+              opacity: 0.8;
+            "
+          >
+            <rect x="10" y="32" width="5" height="15" fill="#5b4636" />
+            <ellipse cx="12.5" cy="30" rx="10" ry="15" fill="#466b44" />
+          </svg>
+          <svg
+            class="fog-tree"
+            width="70"
+            height="140"
+            viewBox="0 0 35 70"
+            style="
+              position: absolute;
+              left: 65vw;
+              bottom: 50px;
+              z-index: 2;
+              opacity: 0.8;
+            "
+          >
+            <rect x="16" y="48" width="5" height="20" fill="#5b4636" />
+            <ellipse cx="18.5" cy="45" rx="14" ry="22" fill="#3d5c3a" />
+          </svg>
+          <svg
+            class="fog-tree"
+            width="55"
+            height="110"
+            viewBox="0 0 28 55"
+            style="
+              position: absolute;
+              left: 80vw;
+              bottom: 50px;
+              z-index: 2;
+              opacity: 0.7;
+            "
+          >
+            <rect x="12" y="36" width="4" height="16" fill="#5b4636" />
+            <ellipse cx="14" cy="34" rx="11" ry="16" fill="#466b44" />
+          </svg>
+          <svg
+            class="fog-tree"
+            width="45"
+            height="90"
+            viewBox="0 0 22 45"
+            style="
+              position: absolute;
+              left: 55vw;
+              bottom: 50px;
+              z-index: 2;
+              opacity: 0.75;
+            "
+          >
+            <rect x="9" y="28" width="4" height="13" fill="#5b4636" />
+            <ellipse cx="11" cy="26" rx="9" ry="13" fill="#3d5c3a" />
+          </svg>
+        </div>
+        <div class="fog-layer"></div>
+        <div class="fog-layer"></div>
+      </div>
+    </body>
+  </body>
+</html>
