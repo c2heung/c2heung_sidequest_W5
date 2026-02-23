@@ -20,10 +20,10 @@ Cheryl Heung, 21070019
 
 Learning Goals:
 
-- Loads JSON levels (preload)
-- Builds Level objects
-- Creates/positions the Player
-- Handles input + level switching
+- Create a world larger than the screen
+- Use parallax and animated/layered motion
+- Control the camera/world movement
+- Evoke emotion through space pacing and timing
 
 ---
 
